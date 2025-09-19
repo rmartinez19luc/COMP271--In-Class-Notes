@@ -28,6 +28,7 @@ class TrainLine:
 
     def __init__(self, name: str)-> None:
         self.name = name
+        self.number_of_stations = 0
         self.head = None
 
     # ----- Acessors & Mutators ----
@@ -51,3 +52,10 @@ class TrainLine:
             # When this loops ends its because cursor.has_next is False,
             # Therefore we are standing at the end of the line
             cursor.set_next(new_station)
+        self.number_of_stations += 1
+    
+    def count_stations(self) -> self:
+        return self.number_of_stations
+    
+    def __len__(self) -> int:
+        return self.count_of_stations()
